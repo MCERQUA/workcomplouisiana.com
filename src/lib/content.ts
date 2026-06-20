@@ -722,32 +722,32 @@ export const WHY_CHOOSE = [
   {
     icon: ShieldCheck,
     title: "LWCC Class Code Experts",
-    desc: "Louisiana's workers' comp class code system is complex. We get it right the first time, preventing costly audit surprises.",
+    description: "Louisiana's workers' comp class code system is complex. We get it right the first time, preventing costly audit surprises.",
   },
   {
     icon: PhoneCall,
     title: "Same-Day Certificates",
-    desc: "Need a COI before breaking ground? We issue certificates the same day — often within the hour.",
+    description: "Need a COI before breaking ground? We issue certificates the same day — often within the hour.",
   },
   {
     icon: FileSearch,
     title: "All 64 Parishes Covered",
-    desc: "From Cameron Parish to the Florida Parishes, we write Louisiana workers' comp statewide.",
+    description: "From Cameron Parish to the Florida Parishes, we write Louisiana workers' comp statewide.",
   },
   {
     icon: FileSignature,
     title: "Audit Defense Included",
-    desc: "Year-end payroll audits can change your premium significantly. We advocate on your behalf to keep costs fair.",
+    description: "Year-end payroll audits can change your premium significantly. We advocate on your behalf to keep costs fair.",
   },
   {
     icon: PhoneCall,
     title: "Local Agent Support",
-    desc: "Speak to a Louisiana-licensed workers' comp specialist — not a call center — whenever you need help.",
+    description: "Speak to a Louisiana-licensed workers' comp specialist — not a call center — whenever you need help.",
   },
   {
     icon: ShieldCheck,
     title: "Competitive Louisiana Rates",
-    desc: "We shop your coverage across top LWCC-approved carriers to find the most competitive rate for your class code.",
+    description: "We shop your coverage across top LWCC-approved carriers to find the most competitive rate for your class code.",
   },
 ] as const;
 

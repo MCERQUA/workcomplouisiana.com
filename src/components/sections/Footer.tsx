@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ShieldCheck, HardHat } from "lucide-react";
 import { SITE, SERVICES, LOCATIONS, BRAND } from "@/lib/site";
 import { COPY } from "@/lib/content";
 

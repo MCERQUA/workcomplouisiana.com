@@ -80,6 +80,11 @@ export const COPY = {
     heading: "Workers' comp across all Louisiana",
     sub: "Our specialists serve Louisiana employers in every market — from the Gulf Coast to the Ark-La-Tex.",
   },
+  finalCta: {
+    h2Lead: "Get Louisiana-Compliant Workers' Comp",
+    h2Highlight: "with coverage built for your business.",
+    lead: "Whether you need a certificate today or a full Louisiana WC program with audit defense and claims advocacy — one call gets you real quotes from LWCC and competitive private markets. Not a voicemail and a two-week wait.",
+  },
   ctaBand: {
     defaultTitle: "Ready for Louisiana-compliant workers' comp?",
     defaultDescription: "Get a competitive quote in 15 minutes. Same-day certificates available.",

@@ -81,6 +81,8 @@ export const COPY = {
     sub: "Our specialists serve Louisiana employers in every market — from the Gulf Coast to the Ark-La-Tex.",
   },
   ctaBand: {
+    defaultTitle: "Ready for Louisiana-compliant workers' comp?",
+    defaultDescription: "Get a competitive quote in 15 minutes. Same-day certificates available.",
     heading: "Ready for Louisiana-compliant workers' comp?",
     sub: "Get a competitive quote in 15 minutes. Same-day certificates available.",
     cta: "Start Your Free Quote",

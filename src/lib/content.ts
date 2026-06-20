@@ -30,6 +30,7 @@ export const COPY = {
     h2Highlight: "cost Louisiana employers the most",
     lead: "Most agents hand a Louisiana business a generic WC policy and call it done. Then an audit hits, the class codes are wrong, and you're paying thousands more than you should. We get it right from day one.",
     sidebarTitle: "Run by people who know Louisiana",
+    sidebarBody: "Josh Cotner founded CCA after years working in the trades. That background is why we understand what's at stake when a Louisiana WC audit reveals miscoded payroll.",
   },
   testimonials: {
     eyebrow: "From Louisiana employers",

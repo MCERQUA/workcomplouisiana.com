@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ShieldCheck, HardHat, Wrench, Building2, Briefcase, Wind, UtensilsCrossed, ShoppingBag } from "lucide-react";
+import { ShieldCheck, HardHat, Wrench, Building2, Briefcase, Wind, UtensilsCrossed, ShoppingBag, ArrowRight } from "lucide-react";
 import { SERVICES } from "@/lib/site";
 import { COPY } from "@/lib/content";
 import { FadeIn } from "@/components/animations/FadeIn";

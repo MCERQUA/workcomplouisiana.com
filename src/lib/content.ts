@@ -8,6 +8,30 @@ export const COPY = {
     ctaSub: "No commitment — quote in 15 minutes",
     trustLine: "Trusted by Louisiana employers in all 64 parishes",
   },
+  nav: { ariaLabel: "Work Comp Louisiana home" },
+  footer: {
+    ctaTitle: "Ready for Louisiana-compliant workers' comp?",
+    ctaSubcopy: "15-minute quotes. Same-day certificates. Audit defense included.",
+    description:
+      "Specialized workers' compensation for Louisiana contractors, construction companies, restaurants, and small businesses. A division of Contractors Choice Agency — founded 2005, licensed all 50 states.",
+  },
+  servicesGrid: {
+    h2Lead: "Workers' comp built specifically for",
+    h2Highlight: "Louisiana employers",
+    lead: "Standard WC policies ignore Louisiana's unique class code system. We write policies designed for LWCC compliance, audit defense, and same-day certificate turnaround.",
+  },
+  why: {
+    eyebrow: "Why Louisiana employers choose us",
+    h2Lead: "The WC problems that",
+    h2Highlight: "cost Louisiana employers the most",
+    lead: "Most agents hand a Louisiana business a generic WC policy and call it done. Then an audit hits, the class codes are wrong, and you're paying thousands more than you should. We get it right from day one.",
+    sidebarTitle: "Run by people who know Louisiana",
+  },
+  testimonials: {
+    eyebrow: "From Louisiana employers",
+    h2Lead: "Businesses that found",
+    h2Highlight: "the right Louisiana WC coverage",
+  },
   process: {
     pill: "How it works",
     heading: "Coverage in four simple steps",

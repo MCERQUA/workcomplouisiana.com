@@ -39,6 +39,7 @@ export const COPY = {
   process: {
     pill: "How it works",
     heading: "Coverage in four simple steps",
+    lead: "No two-week wait. A real conversation, real markets, and a policy you can actually understand — built around your business and Louisiana WC class codes.",
     steps: [
       {
         num: "01",

@@ -629,6 +629,19 @@ export const COPY = {
     lead: "Questions, a quote, or a claim — reach a Louisiana WC specialist, not a call center.",
     errorMessage: "Something went wrong. Please call us at 844-967-5247.",
   },
+  coverage: {
+    eyebrow: "Where we write",
+    h2Lead: "Louisiana workers' comp.",
+    h2Highlight: "All 64 parishes.",
+    lead: "Work Comp Louisiana places workers' compensation programs for employers in every Louisiana parish — from the Gulf Coast to the Ark-La-Tex.",
+    imageAlt: "Louisiana map with workers comp coverage across all 64 parishes",
+    badgeTitle: "Statewide Louisiana WC coverage.",
+    badgeSub: "Writing Louisiana workers' comp in all 64 parishes since 2005.",
+  },
+  faq: {
+    defaultTitleLead: "Louisiana workers' comp,",
+    defaultTitleHighlight: "in plain English",
+  },
 };
 
 /* ============================================================

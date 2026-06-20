@@ -4,9 +4,13 @@ export const COPY = {
     h1Lead: "Louisiana Workers' Comp",
     h1Highlight: "Done Right",
     sub: "State-specific workers' compensation for Louisiana contractors, construction firms, and small businesses. LWCC-compliant. Same-day certificates. Local expertise.",
+    subcopy: "State-specific workers' compensation for Louisiana contractors, construction firms, and small businesses. LWCC-compliant. Same-day certificates. Local expertise.",
     cta: "Get Your Free LA Quote",
     ctaSub: "No commitment — quote in 15 minutes",
     trustLine: "Trusted by Louisiana employers in all 64 parishes",
+    imageAlt: "Louisiana workers' compensation specialists helping a contractor client",
+    statValue: "500+",
+    statLabel: "Louisiana employers insured across all 64 parishes",
   },
   nav: { ariaLabel: "Work Comp Louisiana home" },
   footer: {

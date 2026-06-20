@@ -275,7 +275,7 @@ export const COPY = {
       a: "In most cases, Louisiana WC is the exclusive remedy — meaning injured employees cannot sue their employer in tort. The exception is intentional employer conduct. We help employers understand their exposure.",
     },
   ],
-  serviceDetail: {
+  serviceDetails: {
     "general-contractor-wc": {
       heroBlurb:
         "Louisiana general contractors face complex WC challenges: fluctuating payrolls, multiple subcontractors, and project-by-project certificates. We handle all of it.",

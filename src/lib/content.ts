@@ -762,7 +762,7 @@ export interface ServiceDetail {
   faqs: { q: string; a: string }[];
 }
 
-export const SERVICE_DETAIL: Record<string, ServiceDetail> = COPY.serviceDetail as Record<string, ServiceDetail>;
+export const SERVICE_DETAIL: Record<string, ServiceDetail> = COPY.serviceDetails as Record<string, ServiceDetail>;
 
 export const AZ_REGIONS = COPY.azRegions;
 export const US_STATES = COPY.usStates;

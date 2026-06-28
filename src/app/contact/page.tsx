@@ -8,7 +8,6 @@ import { SITE } from "@/lib/site";
 import { COPY } from "@/lib/content";
 import { CheckCircle2, ArrowRight, Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 
-const WEBHOOK_URL = `https://josh.jam-bot.com/social-api/api/leads/webhook/netlify?tenant=josh&site=${SITE.domain}`;
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", subject: "", message: "", "bot-field": "" });
@@ -26,7 +25,7 @@ export default function ContactPage() {
     setSubmitting(true);
     setError("");
     try {
-      await fetch(WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ form_name: "contact", source: SITE.domain, ...formData }) });
+      await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ "form-name": "contact", ...formData } as Record<string, string>).toString() });
       setSubmitted(true);
     } catch {
       setError(COPY.contact.errorMessage);
@@ -91,7 +90,7 @@ export default function ContactPage() {
                   <p className="text-mocha">Thanks for reaching out — we'll get back to you within one business day.</p>
                 </div>
               ) : (
-                <form name="contact" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="rounded-3xl bg-white border border-adobe shadow-card p-7 md:p-9 space-y-5">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="rounded-3xl bg-white border border-adobe shadow-card p-7 md:p-9 space-y-5">
                   <input type="hidden" name="form-name" value="contact" />
                   <input name="bot-field" type="hidden" value={formData["bot-field"]} onChange={handleChange} className="hidden" />
 

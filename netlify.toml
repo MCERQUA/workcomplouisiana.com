@@ -1,14 +1,14 @@
 [build]
   command = "pnpm run build"
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
   NEXT_DISABLE_TURBOPACK = "1"
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
+# NOTE: @netlify/plugin-nextjs INTENTIONALLY REMOVED — its runtime intercepts POST / before
+# Netlify Forms can capture the lead. Static export (output:"export", publish="out") makes
+# the form a statically-served path so Netlify Forms captures submissions.
 [[notifications]]
   form_name = "quote"
   [notifications.webhook]

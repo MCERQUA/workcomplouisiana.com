@@ -9,45 +9,46 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary — Louisiana Purple
+        // Primary — Terracotta Clay
         clay: {
-          DEFAULT: "#4B2482",
-          dark: "#341970",
-          light: "#6B3DAB",
-          "50": "#F3EEF9",
-          "100": "#E0D0F5",
-          "200": "#C4A8ED",
-          "300": "#A880E4",
-          "400": "#8C58DB",
-          "500": "#6B3DAB",
-          "600": "#4B2482",
-          "700": "#341970",
-          "800": "#1E0F42",
-          "900": "#100821",
+          DEFAULT: "#9C3F24",
+          dark: "#7E3119",
+          light: "#AE5230",
+          "50": "#FCF4F0",
+          "100": "#F7E5DC",
+          "200": "#EECBB9",
+          "300": "#E0A98B",
+          "400": "#C46B42",
+          "500": "#AE5230",
+          "600": "#9C3F24",
+          "700": "#7E3119",
+          "800": "#55200F",
+          "900": "#331309",
         },
-        // Accent — Louisiana Gold
+        // Accent — Natural Green
         sage: {
-          DEFAULT: "#C8A227",
-          dark: "#A88118",
-          light: "#E0BF5A",
+          DEFAULT: "#3D7A4F",
+          dark: "#2E5C3B",
+          light: "#5A9A6C",
         },
+        // Accent — Gold
         gold: {
           DEFAULT: "#C8A227",
-          dark: "#A88118",
+          dark: "#8A6910",
           light: "#E0BF5A",
         },
         // Neutrals
-        espresso: "#1A1225",
-        cocoa: "#3B2D55",
-        mocha: "#7B6B95",
-        adobe: "#D4CAE8",
-        cream: "#F9F6FF",
-        sand: "#EDE8F7",
+        espresso: "#1C1512",
+        cocoa: "#3A2A20",
+        mocha: "#7C6659",
+        adobe: "#E2D3C6",
+        cream: "#FDF8F4",
+        sand: "#F5EAE0",
       },
       backgroundImage: {
-        "clay-gradient": "linear-gradient(135deg, #4B2482 0%, #6B3DAB 100%)",
+        "clay-gradient": "linear-gradient(135deg, #7E3119 0%, #9C3F24 100%)",
         "warm-radial":
-          "radial-gradient(ellipse 80% 60% at 50% 0%, #EDE8F7 0%, #F9F6FF 100%)",
+          "radial-gradient(ellipse 80% 60% at 50% 0%, #F5EAE0 0%, #FDF8F4 100%)",
         "gold-gradient": "linear-gradient(135deg, #C8A227 0%, #E0BF5A 100%)",
       },
       fontFamily: {
@@ -55,9 +56,10 @@ const config: Config = {
         body: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        card: "0 2px 8px rgba(75,36,130,0.07), 0 1px 2px rgba(75,36,130,0.05)",
-        "card-hover": "0 8px 24px rgba(75,36,130,0.13), 0 2px 6px rgba(75,36,130,0.08)",
-        "warm-lg": "0 16px 48px rgba(75,36,130,0.16), 0 4px 12px rgba(75,36,130,0.10)",
+        card: "0 2px 8px rgba(92,45,24,0.07), 0 1px 2px rgba(92,45,24,0.05)",
+        "card-hover": "0 8px 24px rgba(92,45,24,0.13), 0 2px 6px rgba(92,45,24,0.08)",
+        warm: "0 6px 18px rgba(92,45,24,0.12), 0 2px 6px rgba(92,45,24,0.08)",
+        "warm-lg": "0 16px 48px rgba(92,45,24,0.16), 0 4px 12px rgba(92,45,24,0.10)",
       },
       borderRadius: {
         "4xl": "2rem",

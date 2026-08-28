@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { headingFont, bodyFont } from "@/lib/fonts";
 import { SmoothScroll } from "@/components/animations/SmoothScroll";
-import { SITE } from "@/lib/site";
+import { SITE, SERVICES } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name} | Contractors Choice Agency`,
     description: "Louisiana workers' compensation insurance for contractors, construction, restaurants, and small businesses. LWCC-compliant. Same-day certificates.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: `${SITE.name} — Louisiana workers comp Louisiana workers comp coverage` }],
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: `${SITE.name} — Louisiana workers' compensation insurance` }],
   },
   twitter: {
     card: "summary_large_image",
@@ -56,16 +56,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     geo: { "@type": "GeoCoordinates", latitude: 33.2622, longitude: -111.7826 },
     employee: { "@type": "Person", name: "Josh Cotner", jobTitle: "Founder & Insurance Agent" },
     areaServed: { "@type": "Country", name: "United States" },
-    serviceType: [
-      "Louisiana workers comp Cattle & Louisiana workers comp Mortality Insurance",
-      "Louisiana workers comp Property & Buildings Insurance for Dairies",
-      "Equipment Breakdown & Louisiana workers comp Spoilage Insurance",
-      "Louisiana workers comp Product Liability Insurance",
-      "General Liability Insurance for Louisiana workers comp Louisiana workers comps",
-      "Workers' Compensation for Louisiana workers comp Crews",
-      "Commercial Auto & Trucking for Louisiana workers comp Tankers",
-      "Pollution & Environmental Liability for Dairies",
-    ],
+    // Derived from the real service list so this can't drift back out of sync with the site.
+    serviceType: SERVICES.map((s) => s.metaTitle.split(" | ")[0]),
   };
 
   return (

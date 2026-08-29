@@ -669,7 +669,7 @@ export const COPY = {
     h2Lead: "Louisiana workers' comp.",
     h2Highlight: "All 64 parishes.",
     lead: "Work Comp Louisiana places workers' compensation programs for employers in every Louisiana parish — from the Gulf Coast to the Ark-La-Tex.",
-    imageAlt: "Louisiana map with workers comp coverage across all 64 parishes",
+    imageAlt: "Aerial view of Louisiana industrial and commercial worksites along the Gulf Coast",
     badgeTitle: "Statewide Louisiana WC coverage.",
     badgeSub: "Writing Louisiana workers' comp in all 64 parishes since 2005.",
   },

@@ -32,11 +32,6 @@ export const COPY = {
     sidebarTitle: "Run by people who know Louisiana",
     sidebarBody: "Josh Cotner founded CCA after years working in the trades. That background is why we understand what's at stake when a Louisiana WC audit reveals miscoded payroll.",
   },
-  testimonials: {
-    eyebrow: "From Louisiana employers",
-    h2Lead: "Businesses that found",
-    h2Highlight: "the right Louisiana WC coverage",
-  },
   process: {
     pill: "How it works",
     heading: "Coverage in four simple steps",

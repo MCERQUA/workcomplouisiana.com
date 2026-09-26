@@ -3,7 +3,7 @@ export const SITE = {
   domain: "workcomplouisiana.com",
   url: "https://workcomplouisiana.com",
   phone: "844-967-5247",
-  email: "info@workcomplouisiana.com",
+  email: "josh@contractorschoiceagency.com",
   npn: "8608479",
   legalName: "Contractors Choice Agency, LLC",
   phoneHref: "tel:+18449675247",
@@ -11,10 +11,10 @@ export const SITE = {
   description:
     "Louisiana workers' compensation insurance for contractors, construction, restaurants, and small businesses. LWCC-compliant. Same-day certificates.",
   address: {
-    street: "1500 Poydras Street, Suite 1900",
-    city: "New Orleans",
-    state: "LA",
-    zip: "70112",
+    street: "12220 E Riggs Rd, Suite #104",
+    city: "Chandler",
+    state: "AZ",
+    zip: "85249",
     country: "US",
   },
 };
@@ -241,26 +241,3 @@ export const STATS = [
   { value: 64, suffix: "", label: "Louisiana parishes we serve", prefix: "" },
 ] as const;
 
-export const TESTIMONIALS = [
-  {
-    quote:
-      "As a New Orleans GC, I need same-day COIs constantly. Work Comp Louisiana delivers every time — no waiting, no runaround. Best WC experience I've had in 15 years of contracting.",
-    name: "Antoine B.",
-    role: "General Contractor",
-    location: "New Orleans, LA",
-  },
-  {
-    quote:
-      "They caught a class code error my previous broker had been billing me wrong for three years. The correction saved me nearly $8,000 at audit. These are real Louisiana WC specialists.",
-    name: "Sandra M.",
-    role: "HVAC Contractor",
-    location: "Baton Rouge, LA",
-  },
-  {
-    quote:
-      "When my roofer couldn't get coverage elsewhere after a bad year, Work Comp Louisiana found us a competitive rate through a specialty market. They know this industry cold.",
-    name: "Derek P.",
-    role: "Roofing Contractor",
-    location: "Shreveport, LA",
-  },
-] as const;

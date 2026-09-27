@@ -7,7 +7,7 @@ export const SITE = {
   npn: "8608479",
   legalName: "Contractors Choice Agency, LLC",
   phoneHref: "tel:+18449675247",
-  hours: "Mon–Fri 8 am–6 pm CT",
+  hours: "Mon–Fri 8 am–6 pm (Arizona time)",
   description:
     "Louisiana workers' compensation insurance for contractors, construction, restaurants, and small businesses. LWCC-compliant. Same-day certificates.",
   address: {

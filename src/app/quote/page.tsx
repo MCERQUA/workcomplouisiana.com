@@ -8,6 +8,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { SITE } from "@/lib/site";
 import { US_STATES, QUOTE_SERVICE_TYPES, YEARS_OPTIONS, COPY } from "@/lib/content";
 import { CheckCircle2, ShieldCheck, ArrowRight, Phone, Clock, Zap, MapPin } from "lucide-react";
+import { OwnersFieldset } from "@/components/forms/OwnersFieldset";
 
 
 const trustItems = [
@@ -18,6 +19,7 @@ const trustItems = [
 ];
 
 export default function QuotePage() {
+  const [ownerFields, setOwnerFields] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState({
     name: "", businessName: "", email: "", phone: "", state: "", serviceType: "", yearsInBusiness: "", message: "", "bot-field": "",
     streetAddress: "", city: "", zip: "", priorYearGrossSales: "", priorYearSubcontractorExpenses: "", priorYearEmployeeCount: "", priorYearEmployeePayroll: "", estimatedGrossSales: "", estimatedSubcontractorExpenses: "", estimatedEmployeeCount: "", estimatedEmployeePayroll: "", estimatedMaterialCosts: "", subcontractorsHaveInsurance: "", percentSubcontractorsInsured: "", coverageForUninsuredSubcontractors: "", annualGrossSales: "", yearBusinessStarted: "", businessDescription: "", classCode1: "", classCode2: "", classCode3: "", classCode4: "", classCode5: "", residentialVsCommercial: "", newVsExistingConstruction: "", largestProjects: "", priorCarrierName: "", priorPolicyNumber: "", priorPolicyExpiration: "", ownerNames: "", ownerDateOfBirth: "", ownerOwnershipPct: "", numberOfEmployees: "", amountOfPayroll: "", hasClericalStaff: "", clericalStaffCount: "", hasSalesStaff: "", salesStaffCount: "", officeVsFieldSplit: "",
@@ -36,7 +38,7 @@ export default function QuotePage() {
     setSubmitting(true);
     setError("");
     try {
-      await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ "form-name": "quote", ...formData } as Record<string, string>).toString() });
+      await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ "form-name": "quote", ...formData, ...ownerFields } as Record<string, string>).toString() });
       setSubmitted(true);
     } catch {
       setError(COPY.quote.errorMessage);
@@ -243,11 +245,15 @@ export default function QuotePage() {
                           <h3 className="font-heading font-bold text-espresso text-sm uppercase tracking-wider">Owners and officers</h3>
                           <p className="text-xs text-mocha/70 mt-0.5">Each owner or officer to be included or excluded.</p>
                         </div>
-                        <div><label htmlFor="ownerNames" className={labelClass}>Owners and officers</label><textarea id="ownerNames" name="ownerNames" rows={3} value={formData.ownerNames} onChange={handleChange} placeholder="One owner or officer per line, with role" className={`${inputClass} resize-none`} /></div>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div><label htmlFor="ownerDateOfBirth" className={labelClass}>Owner date of birth</label><input id="ownerDateOfBirth" name="ownerDateOfBirth" type="date" value={formData.ownerDateOfBirth} onChange={handleChange} className={inputClass} /></div>
-                          <div><label htmlFor="ownerOwnershipPct" className={labelClass}>Ownership percentage</label><input id="ownerOwnershipPct" name="ownerOwnershipPct" type="text" inputMode="numeric" value={formData.ownerOwnershipPct} onChange={handleChange} placeholder="100" className={inputClass} /></div>
-                        </div>
+                        <OwnersFieldset
+                          inputClass={inputClass}
+                          labelClass={labelClass}
+                          buttonClass="btn-secondary min-h-[44px]"
+                          accentTextClass="text-clay"
+                          mutedTextClass="text-mocha"
+                          borderClass="border-adobe"
+                          onFieldsChange={setOwnerFields}
+                        />
                       </div>
 
                       <div>

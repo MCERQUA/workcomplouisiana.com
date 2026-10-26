@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-HF_TOKEN="${HF_TOKEN:-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}"
+HF_TOKEN="${HF_TOKEN:?set HF_TOKEN in the environment (never commit a token)}"
 MODEL="black-forest-labs/FLUX.1-schnell"
 API="https://router.huggingface.co/hf-inference/models/${MODEL}"
 OUT="/workspace/Websites/workcomplouisiana.com/public/images"

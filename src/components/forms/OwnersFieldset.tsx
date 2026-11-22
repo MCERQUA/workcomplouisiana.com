@@ -16,6 +16,11 @@ interface OwnerRow {
   name: string;
   dob: string;
   pct: string;
+  incl: string;
+  classCode: string;
+  payroll: string;
+  duties: string;
+  title: string;
 }
 
 interface OwnersFieldsetProps {
@@ -35,8 +40,18 @@ interface OwnersFieldsetProps {
 
 const fieldNames = (i: number) =>
   i === 0
-    ? { name: "ownerNames", dob: "ownerDateOfBirth", pct: "ownerOwnershipPct" }
-    : { name: `ownerName${i + 1}`, dob: `ownerDateOfBirth${i + 1}`, pct: `ownerOwnershipPct${i + 1}` };
+    ? { name: "ownerNames", dob: "ownerDateOfBirth", pct: "ownerOwnershipPct", incl: "ownerIncludedExcluded", classCode: "ownerClassCode", payroll: "ownerPayroll", duties: "ownerDuties", title: "ownerTitleRelationship1" }
+    : {
+        name: `ownerName${i + 1}`,
+        dob: `ownerDateOfBirth${i + 1}`,
+        pct: `ownerOwnershipPct${i + 1}`,
+        incl: `ownerIncludedExcluded${i + 1}`,
+        classCode: `ownerClassCode${i + 1}`,
+        payroll: `ownerPayroll${i + 1}`,
+        duties: `ownerDuties${i + 1}`,
+        title: `ownerTitleRelationship${i + 1}`,
+      };
+const BLANK_ROW: OwnerRow = { name: "", dob: "", pct: "", incl: "", classCode: "", payroll: "", duties: "", title: "" };
 
 export function OwnersFieldset({
   inputClass,
@@ -49,7 +64,7 @@ export function OwnersFieldset({
   onFieldsChange,
 }: OwnersFieldsetProps) {
   const [count, setCount] = useState<"1" | "2+">("1");
-  const [owners, setOwners] = useState<OwnerRow[]>([{ name: "", dob: "", pct: "100" }]);
+  const [owners, setOwners] = useState<OwnerRow[]>([{ ...BLANK_ROW, pct: "100" }]);
   const focusRow = useRef<number | null>(null);
   const addRef = useRef<HTMLButtonElement>(null);
   const rowRefs = useRef<(HTMLInputElement | null)[]>([]);
@@ -59,8 +74,8 @@ export function OwnersFieldset({
   const totalOff = anyPct && Math.abs(total - 100) > 0.01;
 
   const summary = owners
-    .filter((o) => o.name || o.dob || o.pct)
-    .map((o, i) => `Owner ${i + 1}: ${o.name || "(no name)"} | DOB ${o.dob || "(not given)"} | ${o.pct || "0"}% ownership`)
+    .filter((o) => o.name || o.dob || o.pct || o.incl || o.classCode || o.payroll || o.duties)
+    .map((o, i) => `Owner ${i + 1}: ${o.name || "(no name)"} | DOB ${o.dob || "(not given)"} | ${o.pct || "0"}% ownership${o.incl ? ` | ${o.incl}` : ""}${o.classCode ? ` | class ${o.classCode}` : ""}${o.payroll ? ` | payroll $${o.payroll}` : ""}${o.duties ? ` | duties: ${o.duties}` : ""}`)
     .join("\n");
 
   useEffect(() => {
@@ -71,6 +86,12 @@ export function OwnersFieldset({
       fields[n.name] = o.name;
       fields[n.dob] = o.dob;
       fields[n.pct] = o.pct;
+      fields[n.incl] = o.incl;
+      fields[n.classCode] = o.classCode;
+      fields[n.payroll] = o.payroll;
+      fields[n.duties] = o.duties;
+      fields[n.title] = o.title;
+      if (i === 0) fields.ownerName1 = o.name; // alias of ownerNames (host ruling 234)
     });
     onFieldsChange(fields);
   }, [owners, count, summary, onFieldsChange]);
@@ -91,7 +112,7 @@ export function OwnersFieldset({
       // Multiple: at least two rows; the solo 100% default no longer makes sense.
       setOwners((prev) => {
         const first = { ...prev[0], pct: prev[0].pct === "100" ? "" : prev[0].pct };
-        return prev.length >= 2 ? [first, ...prev.slice(1)] : [first, { name: "", dob: "", pct: "" }];
+        return prev.length >= 2 ? [first, ...prev.slice(1)] : [first, { ...BLANK_ROW }];
       });
     }
   };
@@ -102,7 +123,7 @@ export function OwnersFieldset({
   const add = () => {
     if (owners.length >= MAX_OWNERS) return;
     focusRow.current = owners.length;
-    setOwners((prev) => [...prev, { name: "", dob: "", pct: "" }]);
+    setOwners((prev) => [...prev, { ...BLANK_ROW }]);
   };
 
   const remove = (i: number) => {
@@ -174,6 +195,7 @@ export function OwnersFieldset({
                 placeholder="Full name and role"
                 className={inputClass}
               />
+              {i === 0 && <input type="hidden" name="ownerName1" value={o.name} />}
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               <div>
@@ -197,6 +219,71 @@ export function OwnersFieldset({
                   value={o.pct}
                   onChange={(e) => update(i, "pct", e.target.value)}
                   placeholder={count === "1" ? "100" : "e.g. 50"}
+                  className={inputClass}
+                />
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div>
+                <label htmlFor={id("incl")} className={labelClass}>Included or excluded (optional)</label>
+                <select
+                  id={id("incl")}
+                  name={n.incl}
+                  value={o.incl}
+                  onChange={(e) => update(i, "incl", e.target.value)}
+                  className={inputClass}
+                >
+                  <option value="">Select…</option>
+                  <option value="Included">Included</option>
+                  <option value="Excluded">Excluded</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor={id("class")} className={labelClass}>Class code (optional)</label>
+                <input
+                  id={id("class")}
+                  name={n.classCode}
+                  type="text"
+                  value={o.classCode}
+                  onChange={(e) => update(i, "classCode", e.target.value)}
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <label htmlFor={id("payroll")} className={labelClass}>Annual payroll for this owner (optional)</label>
+                <input
+                  id={id("payroll")}
+                  name={n.payroll}
+                  type="text"
+                  inputMode="decimal"
+                  value={o.payroll}
+                  onChange={(e) => update(i, "payroll", e.target.value)}
+                  className={inputClass}
+                />
+                <p className={`mt-1 text-xs ${mutedTextClass}`}>Only for Included owners. Leave blank if Excluded.</p>
+              </div>
+              <div>
+                <label htmlFor={id("duties")} className={labelClass}>Duties (optional)</label>
+                <input
+                  id={id("duties")}
+                  name={n.duties}
+                  type="text"
+                  maxLength={136}
+                  value={o.duties}
+                  onChange={(e) => update(i, "duties", e.target.value)}
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <label htmlFor={id("title")} className={labelClass}>Title or relationship (optional)</label>
+                <input
+                  id={id("title")}
+                  name={n.title}
+                  type="text"
+                  maxLength={80}
+                  value={o.title}
+                  onChange={(e) => update(i, "title", e.target.value)}
+                  placeholder="e.g. President, spouse"
                   className={inputClass}
                 />
               </div>
